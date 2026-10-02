@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Henko · Tokens de marca (Manual de marca v1.0, septiembre 2026)
+   Única fuente de colores, tipografías y escalas. El resto del CSS usa var().
+   ========================================================================== */
+
+/* Tipografías autoalojadas (OFL). Schibsted Grotesk es variable (400 a 900). */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/assets/fonts/schibsted-grotesk-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/assets/fonts/schibsted-grotesk-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/dm-mono-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/dm-mono-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/dm-mono-latin-ext-500-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/dm-mono-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Color · paleta (página 10 del manual) */
+  --blanco-calido: #FAF9F5;
+  --tinta: #1A1917;
+  --terracota: #A44F38;
+  --lavanda: #A9A0BD;
+  --lavanda-light: #D3CCE8;
+  --arena: #E6E2D8;
+
+  /* Color · escala de neutros (página 13) */
+  --n050: #F1EEEB;
+  --n100: #CAC7C4;
+  --n200: #A9A6A3;
+  --n300: #878481;   /* líneas sobre fondos claros */
+  --n400: #625F5C;   /* notas sobre Blanco cálido */
+  --n500: #33302E;
+
+  /* Tipografía */
+  --font-sans: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-display: clamp(2.75rem, 1.5rem + 3.5vw, 5rem);
+  --fs-h1: clamp(2.125rem, 1.4rem + 2.1vw, 3.5rem);
+  --fs-h2: clamp(1.75rem, 1.25rem + 1.3vw, 2.75rem);
+  --fs-h3: clamp(1.1875rem, 1.05rem + 0.5vw, 1.5rem);
+  --fs-lead: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-label: 0.8125rem;
+
+  --lh-display: 1.04;
+  --lh-heading: 1.08;
+  --lh-body: 1.6;
+  --track-display: -0.03em;
+  --track-heading: -0.02em;
+  --track-label: 0.06em;
+
+  /* Espacio y layout */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --section: clamp(3.5rem, 2rem + 4.2vw, 7rem);
+  --container: 78rem;
+  --gutter: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+
+  /* Forma (decisión de Tomás, oct 2026): esquinas suaves de 10 px, botones en píldora, líneas finas */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-pill: 999px;
+  --line-width: 1px;
+
+  /* Logo. DESVÍO DEL MANUAL (p. 8 pide 160 px mínimo en pantalla): Tomás decide probar ~112 px, como las referencias. Revisar el trazo fino de la «o» en pantallas de baja densidad. */
+  --logo-w: 112px;
+  --logo-min-w: 112px;
+  --logo-clear: 0.102;   /* ½ altura de la «o» expresada sobre el ancho del logo */
+}
+
+/* Parejas de fondo y texto permitidas (página 12 del manual) */
+.on-blanco        { --bg: var(--blanco-calido); --fg: var(--tinta);          --muted: var(--n400); --accent: var(--terracota);      --line: var(--n300); }
+.on-arena         { --bg: var(--arena);         --fg: var(--tinta);          --muted: var(--n500); --accent: var(--tinta);          --line: var(--n300); }
+.on-lavanda-light { --bg: var(--lavanda-light); --fg: var(--tinta);          --muted: var(--n500); --accent: var(--tinta);          --line: var(--n400); }
+.on-lavanda       { --bg: var(--lavanda);       --fg: var(--tinta);          --muted: var(--tinta); --accent: var(--tinta);         --line: var(--tinta); }
+.on-terracota     { --bg: var(--terracota);     --fg: var(--blanco-calido);  --muted: var(--blanco-calido); --accent: var(--blanco-calido); --line: var(--blanco-calido); }
+.on-tinta         { --bg: var(--tinta);         --fg: var(--blanco-calido);  --muted: var(--n100); --accent: var(--lavanda-light);  --line: var(--n400); }
+
+.surface { background: var(--bg); color: var(--fg); }

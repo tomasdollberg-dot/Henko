@@ -1,0 +1,13 @@
+{
+  "name": "henko-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sitio web de Henko: HTML, CSS y JS estáticos, sin build.",
+  "scripts": {
+    "dev": "npx --yes serve -l 3000 .",
+    "check": "node scripts/check-brand.mjs",
+    "check:launch": "node scripts/check-brand.mjs --launch",
+    "sitemap": "node scripts/build-sitemap.mjs"
+  }
+}

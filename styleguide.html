@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de estilo interna | Henko</title>
+  <meta name="description" content="Referencia interna de tokens, tipografía y módulos del sitio de Henko. No es una página pública.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/styleguide.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header surface on-blanco">
+    <div class="container">
+      <a class="logo" href="/" aria-label="Henko, ir al inicio"><img src="/assets/logo/Henko-logo-tinta.svg" width="168" height="46" alt="Henko"></a>
+      <span class="mono">Guía de estilo · interna</span>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="section sg-section surface on-blanco">
+      <div class="container stack" style="--stack: var(--space-l)">
+        <p class="eyebrow">01 · Color</p>
+        <h1 class="h1">Paleta y parejas permitidas</h1>
+        <div class="sg-grid">
+          <div class="sg-swatch sg-swatch--outline surface on-blanco"><div><p class="h3">Blanco cálido</p><p class="small">Fondo habitual</p></div><p class="mono">#FAF9F5</p></div>
+          <div class="sg-swatch surface on-terracota"><div><p class="h3">Terracota</p><p class="small">Reconocimiento, aperturas, mensajes breves</p></div><p class="mono">#A44F38</p></div>
+          <div class="sg-swatch surface on-tinta"><div><p class="h3">Tinta</p><p class="small">Texto y fondo oscuro</p></div><p class="mono">#1A1917</p></div>
+          <div class="sg-swatch surface on-lavanda"><div><p class="h3">Lavanda</p><p class="small">Detalle puntual: marcador o línea</p></div><p class="mono">#A9A0BD</p></div>
+          <div class="sg-swatch surface on-lavanda-light"><div><p class="h3">Lavanda light</p><p class="small">Fondo de un resumen o idea destacada</p></div><p class="mono">#D3CCE8</p></div>
+          <div class="sg-swatch surface on-arena"><div><p class="h3">Arena</p><p class="small">Información complementaria</p></div><p class="mono">#E6E2D8</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sg-section surface on-blanco">
+      <div class="container stack" style="--stack: var(--space-l)">
+        <p class="eyebrow">02 · Tipografía</p>
+        <h2 class="h1">Schibsted Grotesk y DM Mono</h2>
+        <div class="sg-type">
+          <p class="display">Construir desde dentro.</p>
+          <p class="h1">Titular de página</p>
+          <p class="h2">Titular de sección</p>
+          <p class="h3">Subtítulo de bloque</p>
+          <p class="lead">Texto de apoyo: ordenar los procesos y acordar una forma de trabajo que el equipo pueda mantener en el tiempo.</p>
+          <p>Párrafo de lectura. Procesos claros. <strong>Responsabilidades compartidas.</strong></p>
+          <p class="mono">ISO 9001:2015 · Versión 02 · 16 h</p>
+        </div>
+        <div class="sg-weights">
+          <p style="font-weight:400">Regular · Construir desde dentro</p>
+          <p style="font-weight:500">Medium · Construir desde dentro</p>
+          <p style="font-weight:600">Semibold · Construir desde dentro</p>
+          <p style="font-weight:700">Bold · Construir desde dentro</p>
+          <p style="font-weight:800">ExtraBold · Construir desde dentro</p>
+          <p style="font-weight:900">Black · Construir desde dentro</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sg-section surface on-blanco">
+      <div class="container stack" style="--stack: var(--space-l)">
+        <p class="eyebrow">03 · Módulos</p>
+        <h2 class="h1">Variedad de bloques, mismo sistema</h2>
+        <div class="sg-modules">
+          <div class="box surface on-lavanda-light stack"><p class="h3">Próximo paso</p><p>Acordar responsables y fechas.</p></div>
+          <div class="box surface on-arena stack"><p class="h3">Información complementaria</p><p>Un bloque de apoyo que agrupa datos relacionados.</p></div>
+          <div class="box surface on-tinta stack"><p class="sg-stat">+10</p><p class="mono">Años de trayectoria</p></div>
+          <div class="box surface on-terracota stack"><p class="h3">Procesos claros.</p><p>Aperturas y mensajes breves.</p></div>
+        </div>
+        <ol class="steps">
+          <li>Planificar</li>
+          <li>Hacer</li>
+          <li>Verificar</li>
+          <li>Actuar</li>
+        </ol>
+        <hr class="rule">
+        <div class="sg-row">
+          <a class="btn" href="#">Hablemos</a>
+          <a class="btn btn--outline" href="#">Conocé más</a>
+          <a class="link-arrow" href="#">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sg-section surface on-blanco">
+      <div class="container stack" style="--stack: var(--space-l)">
+        <p class="eyebrow">04 · Espacios reservados</p>
+        <h2 class="h1">Fotos, logos y testimonios pendientes</h2>
+        <p class="lead">Todo lo que lleve <code>data-placeholder</code> bloquea el lanzamiento: el comprobador <code>check-brand --launch</code> falla mientras quede alguno.</p>
+        <div class="sg-modules">
+          <figure class="ph-photo mono" data-placeholder role="img" aria-label="Espacio reservado para una foto">Foto · 4:5</figure>
+          <figure class="ph-photo mono" data-placeholder role="img" aria-label="Espacio reservado para una foto" style="--ratio: 16 / 9">Foto · 16:9</figure>
+          <blockquote class="ph-quote" data-placeholder>
+            <p class="mono">Testimonio de ejemplo</p>
+            <p class="h3">Aquí irá la cita real de un cliente, de dos o tres frases.</p>
+            <p class="small">Nombre Apellido · Cargo, Empresa</p>
+          </blockquote>
+        </div>
+        <div class="sg-logos">
+          <div class="ph-logo mono" data-placeholder>Logo cliente</div>
+          <div class="ph-logo mono" data-placeholder>Logo cliente</div>
+          <div class="ph-logo mono" data-placeholder>Logo cliente</div>
+          <div class="ph-logo mono" data-placeholder>Logo cliente</div>
+          <div class="ph-logo mono" data-placeholder>Logo cliente</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sg-section surface on-arena">
+      <div class="container stack" style="--stack: var(--space-l)">
+        <p class="eyebrow">05 · Logo</p>
+        <h2 class="h1">Logotipo y símbolo</h2>
+        <div class="sg-row">
+          <span class="sg-clear surface on-blanco"><a class="logo" href="/" aria-label="Henko, ir al inicio"><img src="/assets/logo/Henko-logo-tinta.svg" width="168" height="46" alt="Henko"></a></span>
+          <span class="sg-clear surface on-tinta"><a class="logo" href="/" aria-label="Henko, ir al inicio"><img src="/assets/logo/Henko-logo-blanco-calido.svg" width="168" height="46" alt="Henko"></a></span>
+          <span class="sg-clear surface on-terracota"><a class="logo" href="/" aria-label="Henko, ir al inicio"><img src="/assets/logo/Henko-logo-blanco-calido.svg" width="168" height="46" alt="Henko"></a></span>
+        </div>
+        <p class="small">El recuadro discontinuo marca el espacio libre mínimo: la mitad de la altura de la «o» por los cuatro lados. El símbolo solo se usa como favicon o foto de perfil.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer surface on-tinta">
+    <div class="container">
+      <div class="site-footer__meta mono"><span>Henko · Identidad visual</span><span>Versión 1.0 · Septiembre 2026</span></div>
+    </div>
+  </footer>
+</body>
+</html>

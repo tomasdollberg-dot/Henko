@@ -1,0 +1,4 @@
+# Pre-lanzamiento: se bloquea todo hasta tener dominio propio.
+# Al publicar: sustituir por "Allow: /" y añadir la línea "Sitemap: https://DOMINIO/sitemap.xml".
+User-agent: *
+Disallow: /

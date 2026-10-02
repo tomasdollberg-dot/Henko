@@ -1,0 +1,16 @@
+/* Solo para styleguide.html (referencia interna, noindex; se elimina antes de publicar). */
+.sg-grid { display: grid; gap: var(--space-m); grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.sg-swatch { display: grid; align-content: space-between; min-height: 11rem; padding: var(--space-m); }
+.sg-swatch--outline { border: var(--line-width) solid var(--n100); }
+.sg-swatch .h3 { margin-bottom: var(--space-xs); }
+.sg-type > * + * { margin-top: var(--space-s); }
+.sg-weights { display: grid; gap: var(--space-xs); }
+.sg-weights p { font-size: var(--fs-h3); line-height: 1.2; }
+.sg-row { display: flex; flex-wrap: wrap; gap: var(--space-s); align-items: center; }
+.sg-clear { display: inline-block; outline: 1px dashed var(--lavanda); outline-offset: 0; }
+.sg-section + .sg-section { border-top: var(--line-width) solid var(--n100); }
+.sg-modules { display: grid; gap: var(--space-m); grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); align-items: stretch; }
+.sg-modules .box { padding: var(--space-m); }
+.sg-clear .logo { margin-inline-start: 0; }
+.sg-logos { display: grid; gap: var(--space-s); grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
+.sg-stat { font-size: var(--fs-h1); font-weight: 800; line-height: 1; letter-spacing: var(--track-heading); }
