@@ -1,26 +1,40 @@
-/* Henko · JS mínimo y sin dependencias: menú móvil, revelado al hacer scroll y cifras animadas.
+/* Henko · JS mínimo y sin dependencias: menú móvil, pie plegable, revelado al scroll, cifras animadas y formulario.
    Sin JS (o con movimiento reducido) todo el contenido queda visible. */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Menú móvil */
+  /* Menú móvil: botón con nombre accesible y estado; se cierra con Escape y al elegir un enlace */
   var btn = document.querySelector('.nav-toggle');
   var nav = document.getElementById('menu');
   if (btn && nav) {
-    btn.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
+    var setMenu = function (open) {
+      nav.classList.toggle('is-open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+      btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    };
+    btn.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
+    nav.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a')) setMenu(false); });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
-        nav.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.focus();
-      }
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); btn.focus(); }
     });
   }
 
-  /* Revelado al hacer scroll */
+  /* Pie: en móvil la navegación y los servicios van plegados; en escritorio siempre abiertos */
+  var folds = Array.prototype.slice.call(document.querySelectorAll('.fold'));
+  if (folds.length && window.matchMedia) {
+    var mq = window.matchMedia('(min-width: 56.25em)');
+    var syncFolds = function () {
+      folds.forEach(function (d) {
+        var s = d.querySelector('summary');
+        if (mq.matches) { d.open = true; if (s) s.setAttribute('tabindex', '-1'); }
+        else { d.open = false; if (s) s.removeAttribute('tabindex'); }
+      });
+    };
+    syncFolds();
+    if (mq.addEventListener) mq.addEventListener('change', syncFolds);
+  }
+
+  /* Revelado al hacer scroll (módulos completos, 0,3 s) */
   var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   var canObserve = 'IntersectionObserver' in window && !reduce;
   if (!canObserve) {
@@ -34,7 +48,7 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  /* Cifras animadas */
+  /* Cifras animadas (el valor final está en el HTML y el ancho es estable) */
   var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
   if (canObserve && counters.length) {
     var run = function (el) {
@@ -57,5 +71,32 @@
       });
     }, { threshold: 0.6 });
     counters.forEach(function (el) { el.textContent = (el.getAttribute('data-prefix') || '') + '0'; co.observe(el); });
+  }
+
+  /* Formulario: preselección por ?servicio=<slug> y estados de envío.
+     Mientras no haya data-endpoint, funciona en modo de prueba y no envía nada. */
+  var form = document.querySelector('form.form');
+  if (form) {
+    var sel = form.querySelector('select[name="servicio"]');
+    var slug = new URLSearchParams(window.location.search).get('servicio');
+    if (sel && slug) {
+      for (var i = 0; i < sel.options.length; i++) { if (sel.options[i].value === slug) { sel.selectedIndex = i; break; } }
+    }
+    var status = form.querySelector('.form__status');
+    var show = function (msg) { if (status) { status.textContent = msg; status.hidden = false; } };
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (status) status.hidden = true;
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var endpoint = form.getAttribute('data-endpoint');
+      if (!endpoint) { show('Modo de prueba: el formulario todavía no está conectado, no se envió nada.'); return; }
+      fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error('http ' + r.status);
+          form.reset();
+          show('Gracias. Recibimos tu consulta y te vamos a responder pronto.');
+        })
+        .catch(function () { show('No pudimos enviar tu consulta. Probá de nuevo o escribinos por WhatsApp.'); });
+    });
   }
 })();

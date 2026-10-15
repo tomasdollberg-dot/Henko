@@ -98,7 +98,9 @@
   --space-l: 2.5rem;
   --space-xl: 4rem;
   --space-2xl: 6rem;
-  --section: clamp(3.5rem, 2rem + 4.2vw, 7rem);
+  --section: clamp(3.5rem, 2.1rem + 3.5vw, 6rem);   /* 56 px móvil, 96 px escritorio */
+  --section-compact: 3.5rem;                         /* hero, cifras y logos */
+  --fs-display-page: clamp(2.25rem, 1.3rem + 3.3vw, 4.5rem);   /* H1 de la página Servicios: 36 px móvil */
   --container: 78rem;
   --gutter: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
 
@@ -116,10 +118,10 @@
 
 /* Parejas de fondo y texto permitidas (página 12 del manual) */
 .on-blanco        { --bg: var(--blanco-calido); --fg: var(--tinta);          --muted: var(--n400); --accent: var(--terracota);      --line: var(--n300); }
-.on-arena         { --bg: var(--arena);         --fg: var(--tinta);          --muted: var(--n500); --accent: var(--tinta);          --line: var(--n300); }
-.on-lavanda-light { --bg: var(--lavanda-light); --fg: var(--tinta);          --muted: var(--n500); --accent: var(--tinta);          --line: var(--n400); }
+.on-arena         { --bg: var(--arena);         --fg: var(--tinta);          --muted: var(--n400); --accent: var(--tinta);          --line: var(--n400); }   /* N400 sobre Arena: 4,90 */
+.on-lavanda-light { --bg: var(--lavanda-light); --fg: var(--tinta);          --muted: var(--n500); --accent: var(--tinta);          --line: var(--n500); }   /* N500 sobre Lavanda light: 8,47 */
 .on-lavanda       { --bg: var(--lavanda);       --fg: var(--tinta);          --muted: var(--tinta); --accent: var(--tinta);         --line: var(--tinta); }
 .on-terracota     { --bg: var(--terracota);     --fg: var(--blanco-calido);  --muted: var(--blanco-calido); --accent: var(--blanco-calido); --line: var(--blanco-calido); }
-.on-tinta         { --bg: var(--tinta);         --fg: var(--blanco-calido);  --muted: var(--n100); --accent: var(--lavanda-light);  --line: var(--n400); }
+.on-tinta         { --bg: var(--tinta);         --fg: var(--blanco-calido);  --muted: var(--n300); --accent: var(--lavanda-light);  --line: var(--n300); }   /* N300 sobre Tinta: 4,72 */
 
 .surface { background: var(--bg); color: var(--fg); }
