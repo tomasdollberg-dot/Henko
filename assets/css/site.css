@@ -43,14 +43,14 @@
 .hero__grid { display: grid; gap: var(--space-l); margin-top: var(--space-l); align-items: center; }
 .hero__grid .lead { margin-top: 0; }
 .hero__grid .hero__actions { margin-top: var(--space-m); }
-@media (min-width: 56.25em) { .hero__grid { grid-template-columns: 5fr 7fr; gap: var(--space-xl); } }
+@media (min-width: 68em) { .hero__grid { grid-template-columns: 5fr 7fr; gap: var(--space-xl); } }   /* por debajo, el tablero va a todo el ancho debajo del texto */
 
-.board { --gap: 0.75rem; --step: calc(100% + 1.5rem + var(--gap)); display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); padding: var(--gap); background: var(--arena); border-radius: var(--radius); }
-.board__col { display: grid; align-content: start; gap: var(--gap); padding: 0.75rem; background: var(--blanco-calido); border-radius: var(--radius-sm); min-width: 0; }
+.board { --gap: 0.75rem; --step: calc(100% + 1.5rem + var(--gap)); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); padding: var(--gap); background: var(--arena); border-radius: var(--radius); }
+.board__col { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--gap); padding: 0.75rem; background: var(--blanco-calido); border-radius: var(--radius-sm); min-width: 0; }
 .board__h { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 0.5rem; border-bottom: var(--line-width) solid var(--n100); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--n400); }
 .note { padding: 0.7rem 0.75rem; min-height: 3.4rem; border-radius: var(--radius-sm); font-size: 0.875rem; line-height: 1.3; font-weight: 500; background: var(--bg); color: var(--fg); overflow-wrap: normal; hyphens: none; }
 .slot { min-height: 3.4rem; border: var(--line-width) dashed var(--n300); border-radius: var(--radius-sm); }
-.slot--live { border-color: transparent; position: relative; z-index: 2; }
+.slot--live { border: 0; position: relative; z-index: 2; }   /* sin borde: la nota mide lo mismo que cada hueco y el salto cae justo en la caja */
 .slot--live .note { position: relative; animation: hop 15s ease-in-out infinite; }
 @keyframes hop {
   0%   { opacity: 0; transform: translateX(0); }
