@@ -241,6 +241,11 @@
   .site-footer__meta { margin-top: var(--space-m); }
 }
 
+/* ---------- Quién está detrás ---------- */
+.about { display: grid; gap: var(--space-l); }
+.about__text > * + * { margin-top: var(--space-xs); }
+@media (min-width: 48em) { .about { grid-template-columns: 4fr 7fr; gap: var(--space-2xl); align-items: center; } }
+
 /* ---------- Páginas de servicio: migas, héroe y ficha ---------- */
 .crumbs { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-l); }
 .crumbs li + li::before { content: "/"; margin-right: var(--space-xs); color: var(--muted); }

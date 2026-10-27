@@ -35,8 +35,8 @@ Lead: Henko entiende cómo se trabaja y construye con tu equipo. Implementamos s
 CTA principal: **Hablemos** · CTA secundario: Ver servicios →
 
 ### Banda de cifras (DM Mono)
-- +10 años acompañando organizaciones
-- +60 empresas en Argentina
+- +10 Años de experiencia acumulada del equipo
+- +60 Empresas acompañadas
 - 9 servicios integrados
 
 ### Banda Terracota · "Acompaña. No certifica."

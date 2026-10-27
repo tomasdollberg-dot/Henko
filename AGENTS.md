@@ -4,8 +4,9 @@ Instrucciones para agentes de código (Claude Code, Codex) que escriben o revisa
 Fuente de verdad visual y verbal: **Manual de marca Henko v1.0 (septiembre 2026)**. Si algo de este archivo choca con el manual, gana el manual.
 
 ## Qué es
-Web corporativa de Henko, consultora argentina que **acompaña** a organizaciones a implementar, mejorar y sostener sistemas de gestión (ISO), con servicios de capacitación, higiene y seguridad, asesoramiento legal y reclutamiento. Alcance: **todo el país** (sin sede ni dirección pública, sin SEO local por ciudad).
+Web corporativa de Henko, consultora argentina que **acompaña** a organizaciones a implementar, mejorar y sostener sistemas de gestión (ISO), con servicios de capacitación, higiene y seguridad, asesoramiento legal y reclutamiento. Alcance: **todo el país y también fuera de Argentina** (sin sede ni dirección pública, sin SEO local por ciudad).
 Stack: HTML, CSS y JS estáticos, **sin framework ni build**. Despliegue: GitHub → Vercel.
+Los HTML se generan con `entrada/build-pages.mjs`; correr con `HENKO_ROOT=<raíz del proyecto>`; no editar los HTML a mano.
 
 ## Antes de dar nada por terminado
 1. `node scripts/check-brand.mjs` debe terminar sin errores.
@@ -28,9 +29,9 @@ Stack: HTML, CSS y JS estáticos, **sin framework ni build**. Despliegue: GitHub
 - Henko **acompaña, no certifica**. Decir: «acompañamos», «implementamos», «preparamos para la auditoría», «formamos al equipo». No decir: «certificamos», «te damos la ISO», «garantizamos la certificación», «somos una empresa certificadora». Aclarar siempre que la certificación la emite un organismo certificador independiente.
 - Sin sellos, medallas, escudos ni insignias que sugieran una certificación.
 - Sin promesas exageradas. Siglas explicadas la primera vez. Tono humano, técnico, boutique y flexible.
-- Cifras («+10 años», «+60 empresas») solo las confirmadas por el cliente. Nada inventado.
+- Cifras solo las confirmadas por el cliente. Nada inventado. Etiquetas vigentes: «+10 · Años de experiencia acumulada del equipo» y «+60 · Empresas acompañadas».
 - **Prohibido publicar** datos de la propuesta comercial (honorarios, nombres de proveedores, entregables de un cliente) o de capacitaciones internas de un cliente.
-- Sin nombres ni fotos del equipo: solo roles.
+- Se permite el nombre y la foto de la directora (Marina Boeri); del resto del equipo, solo roles.
 - Contenido provisional (fotos, logos de clientes, testimonios de ejemplo, contacto): siempre marcado con `data-placeholder` y con texto que lo declare («Testimonio de ejemplo», «Logo cliente»). Jamás citas realistas con nombre de persona o empresa inventados. Sin marcado `Review`/`AggregateRating`.
 
 ## SEO
@@ -47,6 +48,14 @@ Stack: HTML, CSS y JS estáticos, **sin framework ni build**. Despliegue: GitHub
 - CSS solo con variables de `tokens.css`. Sin estilos de color o fuente en línea. JS mínimo, sin dependencias y con degradación elegante.
 - Respetar `prefers-reduced-motion`. Foco visible. Tamaño táctil mínimo 44 px.
 - Sin peticiones a terceros (analítica, fuentes, CDN) hasta que se decida y se documente. GA4 y Search Console se añaden cuando exista el dominio.
+
+## Decisiones tomadas
+- Dominio real: `www.henkogestion.com`.
+- Email: `info@henkogestion.com`.
+- WhatsApp: +54 9 11 6869-9081.
+- Formulario en modo de prueba hasta definir el endpoint.
+- Fichas de servicio con panel de flujo (`FLOW` en el generador).
+- La bio de Marina Boeri está reservada con un `<p hidden data-placeholder>` y no muestra texto provisional; se completa cuando la tengamos (excepción deliberada a la regla de placeholders visibles).
 
 ## Checklist de revisión (adaptado de la p. 19 del manual)
 - [ ] Logo original, sin modificar, con tamaño mínimo y espacio libre.
