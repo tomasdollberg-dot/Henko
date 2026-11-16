@@ -6,7 +6,7 @@ Fuente de verdad visual y verbal: **Manual de marca Henko v1.0 (septiembre 2026)
 ## Qué es
 Web corporativa de Henko, consultora argentina que **acompaña** a organizaciones a implementar, mejorar y sostener sistemas de gestión (ISO), con servicios de capacitación, higiene y seguridad, asesoramiento legal y reclutamiento. Alcance: **todo el país y también fuera de Argentina** (sin sede ni dirección pública, sin SEO local por ciudad).
 Stack: HTML, CSS y JS estáticos, **sin framework ni build**. Despliegue: GitHub → Vercel.
-Los HTML se generan con `entrada/build-pages.mjs`; correr con `HENKO_ROOT=<raíz del proyecto>`; no editar los HTML a mano.
+Los HTML se generan con `tools/build-pages.mjs` (`npm run build`); la raíz de salida se calcula desde la ubicación del script y `HENKO_ROOT` la anula si hace falta; no editar los HTML a mano.
 
 ## Antes de dar nada por terminado
 1. `node scripts/check-brand.mjs` debe terminar sin errores.

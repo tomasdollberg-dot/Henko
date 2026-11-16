@@ -6,6 +6,7 @@
   "description": "Sitio web de Henko: HTML, CSS y JS estáticos, sin build.",
   "scripts": {
     "dev": "npx --yes serve -l 3000 .",
+    "build": "node tools/build-pages.mjs",
     "check": "node scripts/check-brand.mjs",
     "check:launch": "node scripts/check-brand.mjs --launch",
     "sitemap": "node scripts/build-sitemap.mjs"

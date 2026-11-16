@@ -23,7 +23,7 @@ const PALETTE = new Set([
   '#FAF9F5', '#1A1917', '#A44F38', '#A9A0BD', '#D3CCE8', '#E6E2D8',
   '#F1EEEB', '#CAC7C4', '#A9A6A3', '#878481', '#625F5C', '#33302E',
 ]);
-const SKIP_DIRS = new Set(['node_modules', '.git', 'entrada', 'media-raw', 'tools', 'scripts', '.vercel']);
+const SKIP_DIRS = new Set(['node_modules', '.git', 'media-raw', 'tools', 'scripts', '.vercel']);
 // Desvío consciente del manual (p. 8: 160 px). Decisión de Tomás, oct 2026: probar un logo más pequeño como las referencias.
 const LOGO_MIN_PX = 112;
 const SKIP_PATHS = ['assets/fonts/', 'assets/logo/']; // archivos entregados, no se tocan

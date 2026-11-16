@@ -6,7 +6,6 @@ node_modules/
 *.log
 # Material en bruto: vídeos sin procesar y archivos entregados por el cliente
 media-raw/
-entrada/
 __pycache__/
 *.pyc
 *.zip

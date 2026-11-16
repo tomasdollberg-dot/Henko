@@ -15,7 +15,7 @@ if (!/^https:\/\/[a-z0-9.-]+\.[a-z]{2,}$/i.test(SITE)) {
   console.error('Definí SITE_URL con el dominio definitivo, por ejemplo: SITE_URL=https://dominio.com npm run sitemap');
   process.exit(1);
 }
-const SKIP = new Set(['node_modules', '.git', 'entrada', 'media-raw', 'tools', 'scripts', '.vercel', 'assets']);
+const SKIP = new Set(['node_modules', '.git', 'media-raw', 'tools', 'scripts', '.vercel', 'assets']);
 const pages = [];
 (function walk(dir) {
   for (const n of readdirSync(dir)) {
