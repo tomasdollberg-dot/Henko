@@ -9,3 +9,4 @@ media-raw/
 entrada/
 __pycache__/
 *.pyc
+*.zip
